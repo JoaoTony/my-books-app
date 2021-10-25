@@ -5,7 +5,7 @@ import { colors } from '../../utils/colors'
 
 export const Header = styled.header`
   width: 70%;
-  height: 100px;
+  height: 180px;
   background-color: transparent;
   align-self: center;
   border-bottom: 1px solid ${colors.gray03};

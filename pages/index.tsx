@@ -9,6 +9,7 @@ import { dark } from '../styles/themes/dark'
 import { usePersistedState } from '../utils/usePersistedState'
 
 import Header from '../components/header'
+import BookList from '../components/book-list'
 
 
 const Home: NextPage = () => {
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
         
         </Head>
         <Header toggleTheme={toggleTheme}/>
+        <BookList />
     </AppContainer>
     </ThemeProvider>
   )
