@@ -3,15 +3,16 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { AppContainer } from '../styles/home.styles'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider, DefaultTheme } from 'styled-components'
 import { light } from '../styles/themes/light'
 import { dark } from '../styles/themes/dark'
+import { usePersistedState } from '../utils/usePersistedState'
 
 import Header from '../components/header'
 
 
 const Home: NextPage = () => {
-  const [theme, setTheme] = useState(light)
+  const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light) 
