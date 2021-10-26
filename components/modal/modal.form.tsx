@@ -1,11 +1,14 @@
 import { FC } from 'react'
+import { useAppContext } from '../../context/app-context'
 
 import { Form } from './moda.styles'
 
 const ModalForm: FC = () => {
+  const { type } = useAppContext()
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-      console.log(e)
+      //console.log(e)
   }
   return (
     <Form onSubmit={handleSubmit}>
@@ -21,7 +24,7 @@ const ModalForm: FC = () => {
       <label className="label">Insira a quantidade de páginas</label>
       <input type="text" className="input" name="pages" />
 
-      <button className="button" type="submit">Cadastrar</button>
+      <button className="button" type="submit">{type === 'ADD' ? 'Adicionar' : 'Editar'}</button>
     </Form>
   )
 }

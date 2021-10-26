@@ -1,5 +1,6 @@
 import { FC, useContext } from 'react'
 import { ThemeContext } from 'styled-components'
+import { useAppContext } from '../../context/app-context'
 
 import { 
   Container, 
@@ -19,6 +20,12 @@ import { BookCardProps } from './book-card.types'
 
 const BookCard: FC<BookCardProps> = ({ image, pages, name }) => {
   const { colors } = useContext(ThemeContext)
+  const { handleType, handleShowModal } = useAppContext()
+
+  const handleModal = () => {
+    handleShowModal(true)
+    handleType('EDIT')
+  }
 
   return (
     <Container>
@@ -29,7 +36,7 @@ const BookCard: FC<BookCardProps> = ({ image, pages, name }) => {
       <Pages>{pages} páginas</Pages>
 
       <Row>
-        <EditButton>
+        <EditButton onClick={() => handleModal()}>
           <Edit color={colors.title}/>
         </EditButton>
         <DeletButton>

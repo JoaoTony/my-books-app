@@ -11,8 +11,6 @@ export const Container = styled.div<{ showModal: boolean }>`
 
   z-index: ${props => props.showModal ? 20 : -1};
   transition: all 0.3s ease;
-  animation-delay: 0.5s;
-
 `
 
 export const Background = styled.div`
@@ -60,7 +58,7 @@ export const Form = styled.form`
     width: 300px;
     height: 50px;
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.1);
+    background: ${props => props.theme.colors.input01};
     border: none;
     font-size: 15px;
     padding: 0 10px;
@@ -74,7 +72,7 @@ export const Form = styled.form`
     height: 50px;
     border: none; 
     border-radius: 8px;
-    background: ${props => props.theme.colors.title};
+    background: ${props => props.theme.colors.button01};
     color: ${props => props.theme.colors.background};
     font-weight: 700;
     font-size: 15px;
@@ -82,7 +80,7 @@ export const Form = styled.form`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
   }
 `

@@ -11,6 +11,8 @@ declare module 'styled-components' {
       gray02: string,
       gray03: string,
       gray04: string,
+      input01: string,
+      button01: string,
     }
   }
 }

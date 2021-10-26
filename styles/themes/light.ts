@@ -8,5 +8,7 @@ export const light = {
     gray02: '#C4C4C4',
     gray03: '#D8D8DA',
     gray04: '#F0EBEB',
+    input01: '#f0ebeb',
+    button01: '#131214',
   }
 }
