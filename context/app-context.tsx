@@ -7,6 +7,7 @@ const AppContextProvider: FC = props => {
   const { children } = props
   const [modal, setShowModal] = useState(InitialState.showModal)
   const [type, setModalType] = useState(InitialState.type)
+  const [elementID, setElementID] = useState(InitialState.elementID)
 
   const handleShowModal = useCallback((show: boolean) => {
     setShowModal(show)
@@ -16,8 +17,12 @@ const AppContextProvider: FC = props => {
     setModalType(changeType)
   },[])
 
+  const handleElementID = useCallback((newID: string) => {
+    setElementID(newID)
+  }, [])
+
   return (
-    <AppContext.Provider value={{ showModal: modal, type, handleShowModal, handleType }}>
+    <AppContext.Provider value={{ showModal: modal, type, handleShowModal, handleType, elementID, handleElementID }}>
       {children}
     </AppContext.Provider>
   )

@@ -11,4 +11,5 @@ export const AppContainer = styled.div`
   background-color: ${props => props.theme.colors.background};
 
   transition: all ease-in 0.5s;
+  overflow-x: hidden;
 `

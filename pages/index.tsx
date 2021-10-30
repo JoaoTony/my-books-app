@@ -12,11 +12,12 @@ import Header from '../components/header'
 import BookList from '../components/book-list'
 import AddBookSection from '../components/add-books-section'
 import Modal from '../components/modal'
-import { AppContextProvider } from '../context/app-context'
+import { AppContextProvider, useAppContext } from '../context/app-context'
 
 
 const Home: NextPage = () => {
   const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light)
+  const { showModal } = useAppContext()
 
   const toggleTheme = useCallback(() => {
     setTheme(theme.title === 'light' ? dark : light) 
@@ -39,7 +40,9 @@ const Home: NextPage = () => {
           
           <BookList />
           
-          <Modal />
+          {showModal && <Modal />}
+          {console.log(showModal)}
+      
         </AppContainer>
       </ThemeProvider>
     </AppContextProvider>
